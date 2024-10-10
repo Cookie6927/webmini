@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <title>Pet Aid - Stray Animal Support</title>
+    <!-- Font Awesome for custom icons (if needed) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .hero-section {
+            background: url('img/petbg.jpg') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-scroll navbar-light ">
+        <div class="container-fluid px-5">
+            <img src="https://mdbootstrap.com/img/Photos/new-templates/animal-shelter/logo.png" height="70" alt="Logo" loading="lazy" />
+            
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span> <!-- This is the default Bootstrap toggle icon -->
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarExample01">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#pets">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="how.html">How can I Help?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutus.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <h1>A Helping Hand for Stray Animals</h1>
+            <p class="lead">MCA MANIPAL INITIATIVE</p>
+            <button class="cta-button" onclick="location.href = 'services.html'">Find Out More</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container d-flex justify-content-between align-items-start">
+            <!-- Contact Us Section -->
+            <div class="footer-col text-center">
+                <img src="https://img.icons8.com/?size=100&id=7859&format=png&color=EDEBEB" alt="Contact Icon" width="30px">
+                <h6 class="mt-2">Contact Us</h6>
+                <ul class="list-unstyled">
+                    <li><a href="mailto:abc@gmail.com">abc@gmail.com</a></li>
+                    <li><a href="tel:+9088765498">+90 8876 5498</a></li>
+                    <li><a href="tel:+9887654333">+98 8765 4333</a></li>
+                </ul>
+            </div>
+            <!-- Social Media Section -->
+            <div class="footer-col text-center">
+                <img src="https://img.icons8.com/?size=100&id=38970&format=png&color=EDEBEB" alt="Social Media Icon" width="30px">
+                <h6 class="mt-2">Follow Us</h6>
+                <ul class="list-unstyled">
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+            <!-- References Section -->
+            <div class="footer-col text-center">
+                <img src="https://img.icons8.com/?size=100&id=12620&format=png&color=EDEBEB" alt="Help Icon" width="30px">
+                <h6 class="mt-2">More Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="#">Places</a></li>
+                    <li><a href="#">Suggestions</a></li>
+                    <li><a href="#">Other Help</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS, Popper.js, and Bootstrap's toggle functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

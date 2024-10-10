@@ -1,0 +1,181 @@
+/* General Body Styling */
+body {
+  background-color: #f7f1e3; /* Light background to keep the content readable */
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #ffd166; /* Warm yellow for a friendly and welcoming look */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-toggler-icon{
+  color: #4e4e4e;
+
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4e4e4e;
+}
+
+.nav-link {
+  color: #4e4e4e;
+  font-size: 18px;
+  margin-right: 20px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ff6b3a; /* Hover color that matches call-to-action button */
+}
+
+.nav-link.active {
+  font-weight: bold;
+  color: #ff6b3a;
+}
+
+/* Hero Section Styling */
+.hero-section {
+  background: url('petbg.jpg') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-section h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.cta-button {
+  background-color: #ff6b3a;
+  color: white;
+  font-size: 20px;
+  padding: 15px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+  background-color: #ff5a22;
+}
+
+/* Form Section */
+.form-section {
+  padding: 50px 0;
+  background-color: #fff;
+  border-top: 5px solid #ffd166;
+  border-bottom: 5px solid #ffd166;
+}
+
+.form-section h2 {
+  color: #ff6b3a;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-select {
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  background-color: #ff6b3a;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  transition: 0.3s ease;
+  font-size: 18px;
+  width: 100%;
+}
+
+button[type="submit"]:hover {
+  background-color: #ff5a22;
+}
+
+/* Footer Section */
+.footer {
+  background-color: #ffd166;
+  padding: 20px 0;
+  text-align: center;
+  color: #4e4e4e;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.footer a {
+  color: #ff6b3a;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #ff5a22;
+  text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .hero-section h1 {
+      font-size: 2.5rem;
+  }
+
+  .hero-section p {
+      font-size: 1.2rem;
+  }
+
+  .cta-button {
+      font-size: 18px;
+      padding: 12px 25px;
+  }
+}
+
+/* Donate Now Button Styles */
+.donation-btn{
+  background: linear-gradient(45deg, #ff7b54, #ffcc00);
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 50px; /* Rounded corners */
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: none;
+  display: inline-block;
+}
+
+.donation-btn:hover {
+  background: linear-gradient(45deg, #ffcc00, #ff7b54);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px); /* Lift the button slightly */
+  color: #fff;
+}
+

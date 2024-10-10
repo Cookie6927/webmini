@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+
+    <title>Pet Aid - Services</title>
+
+    <style>
+        .hero-section {
+            background: url('img/petbg.jpg') no-repeat center center;
+            background-size: cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .service-section {
+            padding: 50px 0;
+        }
+
+        .service-section h2 {
+            margin-bottom: 30px;
+        }
+
+        .service-card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f8f9fa;
+        }
+
+        .btn-service {
+            margin-top: 20px;
+            background-color: #ff7b54;
+            color: white;
+        }
+
+        .form-section {
+            display: none;
+            margin-top: 50px;
+        }
+
+        .form-section.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-scroll">
+        <div class="container-fluid px-5">
+            <img src="https://mdbootstrap.com/img/Photos/new-templates/animal-shelter/logo.png" height="70" alt=""
+                loading="lazy" />
+            <button class="navbar-toggler ps-0" type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon d-flex justify-content-start align-items-center">
+                    <i class="fas fa-bars"></i>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarExample01">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link " href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="how.html">How Can I Help?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutus.html">About Us</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p class="lead">Helping animals, one step at a time.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="service-section" id="services">
+        <div class="container">
+            <h2 class="text-center">Explore Our Services</h2>
+            <div class="row">
+
+                <!-- Report a Stray Animal -->
+                <div class="col-md-6">
+                    <div class="service-card">
+                        <h4>Report a Stray Animal</h4>
+                        <p>Help us provide support for stray animals in your area by reporting them. We will ensure they
+                            receive the necessary care.</p>
+                        <a href="javascript:void(0)" class="btn btn-service" onclick="showForm('reportStray')">Report Now</a>
+                    </div>
+                </div>
+
+                <!-- File a Rabid Animal Report -->
+                <div class="col-md-6">
+                    <div class="service-card">
+                        <h4>File a Rabid Animal Report</h4>
+                        <p>If you encounter an animal showing signs of rabies, report it immediately to prevent the
+                            spread of the disease.</p>
+                        <a href="javascript:void(0)" class="btn btn-service" onclick="showForm('reportRabid')">Report Now</a>
+                    </div>
+                </div>
+
+                <!-- Report Animal Cruelty -->
+                <div class="col-md-6 mt-4">
+                    <div class="service-card">
+                        <h4>Report Animal Cruelty</h4>
+                        <p>If you witness or suspect any form of cruelty towards animals, file a report so we can take
+                            action and protect them.</p>
+                        <a href="javascript:void(0)" class="btn btn-service" onclick="showForm('reportCruelty')">Report Now</a>
+                    </div>
+                </div>
+
+                <!-- Send Pet Aid -->
+                <div class="col-md-6 mt-4">
+                    <div class="service-card">
+                        <h4>Send Pet Aid</h4>
+                        <p>Contribute to providing food, medical supplies, and other necessities to animals in need
+                            through our Pet Aid program.</p>
+                        <a href="javascript:void(0)" class="btn btn-service" onclick="showForm('sendPetAid')">Send Aid</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Forms Section -->
+    
+    <!-- Stray Animal Form -->
+<section class="form-section" id="reportStray">
+    <div class="container">
+        <h2 class="text-center mb-5">Report a Stray Animal</h2>
+        <form id="reportStrayForm">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="animalName" class="form-label">Animal Name</label>
+                    <input type="text" class="form-control" id="animalName" placeholder="Enter animal's name" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="animalType" class="form-label">Animal Type</label>
+                    <select id="animalType" class="form-select" required>
+                        <option selected>Select Animal Type</option>
+                        <option value="dog">Dog</option>
+                        <option value="cat">Cat</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="location" class="form-label">Location Found</label>
+                    <input type="text" class="form-control" id="location" placeholder="Enter location" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="condition" class="form-label">Condition</label>
+                    <input type="text" class="form-control" id="condition" placeholder="Enter condition" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="email" class="form-label">Your Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 mt-4">Submit</button>
+        </form>
+    </div>
+</section>
+
+    <!-- Rabid Animal Form -->
+    <section class="form-section" id="reportRabid">
+        <div class="container">
+            <h2 class="text-center mb-5">File a Rabid Animal Report</h2>
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="animalSigns" class="form-label">Signs of Rabies</label>
+                        <input type="text" class="form-control" id="animalSigns" placeholder="Describe signs of rabies">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="rabidLocation" class="form-label">Location Found</label>
+                        <input type="text" class="form-control" id="rabidLocation" placeholder="Enter location">
+                    </div>
+                </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                
+                <button type="submit" class="btn btn-danger w-100 mt-4">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Animal Cruelty Form -->
+    <section class="form-section" id="reportCruelty">
+        <div class="container">
+            <h2 class="text-center mb-5">Report Animal Cruelty</h2>
+            <form>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="crueltyDetails" class="form-label">Details of Cruelty</label>
+                        <textarea class="form-control" id="crueltyDetails" rows="4"
+                            placeholder="Describe the situation"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="email" class="form-label">Your Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-warning w-100 mt-4">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Pet Aid Form -->
+    <section class="form-section" id="sendPetAid">
+        <div class="container">
+            <h2 class="text-center mb-5">Send Pet Aid</h2>
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="aidType" class="form-label">Aid Type</label>
+                        <select id="aidType" class="form-select">
+                            <option selected>Select Aid Type</option>
+                            <option value="food">Food</option>
+                            <option value="medical">Medical Supplies</option>
+                            <option value="shelter">Shelter</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="aidLocation" class="form-label">Location</label>
+                        <input type="text" class="form-control" id="aidLocation" placeholder="Enter location">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="crueltyDetails" class="form-label">Describe the care needed</label>
+                        <textarea class="form-control" id="crueltyDetails" rows="4"
+                            placeholder="Describe the situation"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="email" class="form-label">Your Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success w-100 mt-4">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container d-flex justify-content-between align-items-start">
+            
+            <!-- Contact Us Section -->
+            <div class="footer-col text-center">
+                <img src="https://img.icons8.com/?size=100&id=7859&format=png&color=EDEBEB" alt="Contact Icon" width="30px">
+                <h6 class="mt-2">Contact Us</h6>
+                <ul class="list-unstyled">
+                    <li><a href="mailto:abc@gmail.com">abc@gmail.com</a></li>
+                    <li><a href="tel:+9088765498">+90 8876 5498</a></li>
+                    <li><a href="tel:+9887654333">+98 8765 4333</a></li>
+                </ul>
+            </div>
+    
+            <!-- Social Media Section -->
+            <div class="footer-col text-center">
+                <img src="https://img.icons8.com/?size=100&id=38970&format=png&color=EDEBEB" alt="Social Media Icon" width="30px">
+                <h6 class="mt-2">Follow Us</h6>
+                <ul class="list-unstyled">
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+    
+            <!-- References Section -->
+            <div class="footer-col text-center">
+                <img src="https://img.icons8.com/?size=100&id=12620&format=png&color=EDEBEB" alt="Help Icon" width="30px">
+                <h6 class="mt-2">More Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="#">Places</a></li>
+                    <li><a href="#">Suggestions</a></li>
+                    <li><a href="#">Other Help</a></li>
+                </ul>
+            </div>
+    
+        </div>
+    </footer>
+    
+
+    <!-- Script to Toggle Forms -->
+    <script>
+        function showForm(formId) {
+            const forms = document.querySelectorAll('.form-section');
+            forms.forEach(form => form.classList.remove('active'));
+
+            const targetForm = document.getElementById(formId);
+            if (targetForm) {
+                targetForm.classList.add('active');
+                window.scrollTo({
+                    top: targetForm.offsetTop - 50,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        
+            document.getElementById('reportStrayForm').addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevents the form from submitting
+                
+                // Get values
+                const animalName = document.getElementById('animalName').value;
+                const animalType = document.getElementById('animalType').value;
+                const location = document.getElementById('location').value;
+                const condition = document.getElementById('condition').value;
+                const email = document.getElementById('email').value;
+        
+                // Regex patterns
+                const namePattern = /^[a-zA-Z\s]{2,50}$/;  // Only alphabets and spaces, min 2 and max 50 characters
+                const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Standard email pattern
+        
+                // Validate each field
+                if (!namePattern.test(animalName)) {
+                    alert("Invalid animal name. Only letters and spaces allowed.");
+                    return;
+                }
+                if (!namePattern.test(location)) {
+                    alert("Invalid location.");
+                    return;
+                }
+                if (!emailPattern.test(email)) {
+                    alert("Invalid email address.");
+                    return;
+                }
+        
+                // If all validations pass
+                sendEmail(animalName, animalType, location, condition, email);
+            });
+        
+            function sendEmail(animalName, animalType, location, condition, email) {
+
+                // You can use a free service like EmailJS or SendGrid to trigger an email
+                alert(`Email will be sent with details: \nAnimal: ${animalName}\nType: ${animalType}\nLocation: ${location}\nCondition: ${condition}\nEmail: ${email}`);
+                
+                // Example usage with EmailJS (using free API)
+                emailjs.send("service_yntoy1s","template_tb0kapb",{
+                    from_name: "Ojas",
+                    animal_name: animalName,
+                    animal_type: animalType,
+                    location_found: location,
+                    condition_found: condition,
+                    user_email: email,
+                    reply_to: "ojasjayant13@gmail.com",
+                    });
+            }
+       
+        
+    </script>
+
+</body>
+
+</html>
