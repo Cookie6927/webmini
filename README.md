@@ -2,6 +2,8 @@
 
 This project is a responsive website built for a **Pet Aid Service** that provides assistance to stray animals. The service includes collecting information about stray animals through a form and offering essential services like food and shelter. The website is designed with a soft and subtle color palette for a welcoming user experience.
 
+- Created using HTML , CSS (BOOTSTRAP) , JS & EMAILJS
+
 ## Features
 
 - **Home Page**: 
@@ -43,3 +45,8 @@ This project is a responsive website built for a **Pet Aid Service** that provid
 1. Clone the repository:
    ```bash
    git clone https://github.com/cookie6927/webmini
+
+## Future Enhancements 
+- add more content
+- add payment gateway
+- create more styling elements
