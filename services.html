@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+      <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
@@ -51,11 +51,21 @@
             display: block;
         }
     </style>
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "txu5FSNk6UVBU7432",
+      });
+   })();
+</script>
 </head>
 
 <body>
-
-    <!-- Navbar -->
+<!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top navbar-scroll">
         <div class="container-fluid px-5">
             <img src="https://mdbootstrap.com/img/Photos/new-templates/animal-shelter/logo.png" height="70" alt=""
@@ -70,7 +80,7 @@
             <div class="collapse navbar-collapse" id="navbarExample01">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link " href="index.html">Home</a>
+                        <a class="nav-link " href="home.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="services.html">Services</a>
@@ -320,7 +330,6 @@
     </footer>
     
 
-    <!-- Script to Toggle Forms -->
     <script>
         function showForm(formId) {
             const forms = document.querySelectorAll('.form-section');
@@ -336,57 +345,52 @@
             }
         }
 
-        
-            document.getElementById('reportStrayForm').addEventListener('submit', function (event) {
-                event.preventDefault(); // Prevents the form from submitting
-                
-                // Get values
-                const animalName = document.getElementById('animalName').value;
-                const animalType = document.getElementById('animalType').value;
-                const location = document.getElementById('location').value;
-                const condition = document.getElementById('condition').value;
-                const email = document.getElementById('email').value;
-        
-                // Regex patterns
-                const namePattern = /^[a-zA-Z\s]{2,50}$/;  // Only alphabets and spaces, min 2 and max 50 characters
-                const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Standard email pattern
-        
-                // Validate each field
-                if (!namePattern.test(animalName)) {
-                    alert("Invalid animal name. Only letters and spaces allowed.");
-                    return;
-                }
-                if (!namePattern.test(location)) {
-                    alert("Invalid location.");
-                    return;
-                }
-                if (!emailPattern.test(email)) {
-                    alert("Invalid email address.");
-                    return;
-                }
-        
-                // If all validations pass
-                sendEmail(animalName, animalType, location, condition, email);
-            });
-        
-            function sendEmail(animalName, animalType, location, condition, email) {
+        document.getElementById('reportStrayForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevents the form from submitting
+            
+            // Get values
+            const animalName = document.getElementById('animalName').value;
+            const animalType = document.getElementById('animalType').value;
+            const location = document.getElementById('location').value;
+            const condition = document.getElementById('condition').value;
+            const email = document.getElementById('email').value;
 
-                // You can use a free service like EmailJS or SendGrid to trigger an email
-                alert(`Email will be sent with details: \nAnimal: ${animalName}\nType: ${animalType}\nLocation: ${location}\nCondition: ${condition}\nEmail: ${email}`);
-                
-                // Example usage with EmailJS (using free API)
-                emailjs.send("service_yntoy1s","template_tb0kapb",{
-                    from_name: "Ojas",
-                    animal_name: animalName,
-                    animal_type: animalType,
-                    location_found: location,
-                    condition_found: condition,
-                    user_email: email,
-                    reply_to: "ojasjayant13@gmail.com",
-                    });
+            // Regex patterns
+            const namePattern = /^[a-zA-Z\s]{2,50}$/;  
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; 
+
+            // Validate each field
+            if (!namePattern.test(animalName)) {
+                alert("Invalid animal name. Only letters and spaces allowed.");
+                return;
             }
-       
-        
+            if (!namePattern.test(location)) {
+                alert("Invalid location.");
+                return;
+            }
+            if (!emailPattern.test(email)) {
+                alert("Invalid email address.");
+                return;
+            }
+
+            // If all validations pass
+            sendEmail(animalName, animalType, location, condition, email);
+        });
+
+        function sendEmail(animalName, animalType, location, condition, email) {
+            emailjs.send("service_yntoy1s", "template_tb0kapb", {
+                animal_name: animalName,
+                animal_type: animalType,
+                location_found: location,
+                condition_found: condition,
+                user_email: email,
+            })
+            .then(function(response) {
+                alert('Email sent successfully!');
+            }, function(error) {
+                alert('Failed to send email. Please try again later.');
+            });
+        }
     </script>
 
 </body>
